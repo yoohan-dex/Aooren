@@ -1,0 +1,122 @@
+$card-title-size: 30px; 
+
+@keyframes comming {
+  from { transform: scale(1.5) translate(10%); opacity: 0.1; }
+  to { transform: scale(1) translate(0); opacity: 1;}
+}
+
+
+.card {
+  border-radius: 0;
+  display: flex;
+  margin: 0.5%;
+  
+
+
+
+  box-shadow: 0 2px 5px rgba(0,0,0,.26);
+  flex-direction: column;
+  background: $card;
+  color: $theme-white;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  @include breakpoint(xlarge) {
+    flex-basis: percentage((100-4)/4/100);
+  }
+  @include breakpoint(large) {
+    flex-basis: percentage((100-3)/3/100);
+  }
+  @include breakpoint(medium) {
+    flex-basis: percentage((100-2)/2/100);
+  }
+  @include breakpoint(small) {
+    flex-basis: 100%;
+  }
+  @include breakpoint(xsmall) {
+    flex-basis: 100%;
+  }
+}
+.cardStrink {
+  @include breakpoint(xlarge) {
+    flex-basis: percentage((100)/4/100);
+  }
+  @include breakpoint(large) {
+    flex-basis: percentage((100)/3/100);
+  }
+  @include breakpoint(medium) {
+    flex-basis: percentage((100)/2/100);
+  }
+  @include breakpoint(small) {
+    flex-basis: 100%;
+  }
+  @include breakpoint(xsmall) {
+    flex-basis: 100%;
+  }
+}
+
+.cardMedia {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 42.55% 10% 10% 10%;
+  
+  .content {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+}
+.article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  flex-basis: 100%;
+  margin: 3% 7%;
+  bottom: 0;
+  h1 {
+    font-family: _font(family-title);
+    // font-family: raleway, sans-serif;
+    font-size: $card-title-size;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: _font(weight-bold);
+    font-smooth: always;
+  }
+  small {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: $button;
+    // margin-bottom: _size(element-margin);
+  }
+}
+
+.link {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+.cardMain {
+  animation: comming .5s $animation-curve-default;  
+}
+:global{
+  .card-enter {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  .card-enter.card-enter-active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .card-leave {
+    opacity: 0.1;
+  }
+}

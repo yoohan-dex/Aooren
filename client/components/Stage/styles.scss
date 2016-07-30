@@ -1,0 +1,42 @@
+
+
+.stage {
+  left: 0;
+  // offset position
+  position: relative;
+  
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-basis: 100%;
+  height: 100%;
+  
+  transition-timing-function: $animation-curve-default;
+  transition-duration: $animation-duration;
+  transition-property: left, width;
+  @include breakpoint(large) {
+    padding-top: 6%;
+  }
+  @include breakpoint(medium) {
+    padding-top: 8%;
+  }
+  @include breakpoint(small) {
+    padding-top: 10%;
+  }
+}
+
+.open {
+  @include breakpoint(large) {
+    left: percentage(1/3);
+  }
+  @include breakpoint(medium) {
+    left: 48%;
+  }
+  @include breakpoint(small) {
+    left: percentage(1);
+  }
+}
+
+
+.filter {
+  opacity: 1;
+}
