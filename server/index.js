@@ -19,7 +19,7 @@ app.use(frontendMiddles(webpackConfig));
 // app.get('/*', (req, res) => {
 //   res.sendFile(path.join(__dirname, './index.html'));
 // });
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 2333;
 
 // app.listen(port);
 app.listen(port, (err) => {
