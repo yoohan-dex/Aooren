@@ -39,8 +39,8 @@
 }
 
 .markdown {
-  padding: 5% 6%;
+  padding: 40px 6%;
   @include breakpoint(medium) {
-    padding: 3%;
+    padding: 30px 3%;
   }
 }

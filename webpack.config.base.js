@@ -29,7 +29,7 @@ export default (options) => ({
     }],
   },
   sassLoader: {
-    data: `@import "${path.resolve(__dirname, 'client/globalStyles/libs/index.scss')}";`,
+    data: '@import "client/globalStyles/libs/index.scss";',
     includePaths: /client/,
     outputStyle: 'compressed',
     sourceMap: true,

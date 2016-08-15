@@ -8,6 +8,7 @@ import base from './webpack.config.base';
 export default base({
   devtool: 'cheap-module-eval-source-map',
   entry: [
+    'eventsource-polyfill',
     'webpack-hot-middleware/client',
     path.join(__dirname, '/client/index.js'),
   ],

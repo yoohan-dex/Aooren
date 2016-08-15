@@ -31,7 +31,7 @@ class Search extends Component {
     const time = new Date(created);
     card.title = title;
     card.id = _id;
-    card.date = `${time.getFullYear()}/${time.getMonth()}/${time.getDate()}`;
+    card.date = `${time.getFullYear()}/${time.getMonth() + 1}/${time.getDate()}`;
     card.genre = metafield.genre.value;
     card.image = metafield.image.url;
     return card;
