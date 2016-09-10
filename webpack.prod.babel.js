@@ -14,10 +14,10 @@ export default base({
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].chunk.js',
   },
-  cssLoaders: ExtractTextPlugin.extract(
-    'style-loader',
-    'css-loader?modules&importLoaders=1!postcss-loader!sass'
-  ),
+  cssLoaders: ExtractTextPlugin.extract({
+    fallbackLoader: 'style-loader',
+    loader: 'css-loader?modules&importLoaders=1!postcss-loader!sass'
+  }),
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(true),
     new webpack.optimize.DedupePlugin(),
@@ -42,6 +42,9 @@ export default base({
       },
       inject: true,
     }),
-    new ExtractTextPlugin('[name].[contenthash].css'),
+    new ExtractTextPlugin({
+      filename: '[name].[id].style.css',
+      allChunks: true
+    }),
   ],
 });
